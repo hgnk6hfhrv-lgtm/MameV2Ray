@@ -1,15 +1,17 @@
 workflows:
-  default-workflow:
-    name: MameV2Ray Flutter Build
-    max_build_duration: 60
+  ios-release-workflow:
+    name: MameV2Ray iOS Build
+    max_build_duration: 120
+    instance_type: mac_mini_m2
     environment:
       flutter: stable
+      xcode: latest
     scripts:
       - name: Get Flutter packages
         script: |
-          flutter packages pub get
-      - name: Build APK Release
+          flutter packages get
+      - name: Build iOS App (IPA)
         script: |
-          flutter build apk --release
+          flutter build ipa --release --no-codesign
     artifacts:
-      - build/app/outputs/flutter-apk/app-release.apk
+      - build/ios/ipa/*.ipa
