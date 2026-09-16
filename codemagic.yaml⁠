@@ -1,1 +1,11 @@
-
+workflows:
+  default-workflow:
+    name: Default Workflow
+    environment:
+      node: latest
+    scripts:
+      - name: Build
+        script: |
+          echo "Building MameV2Ray PWA..."
+    artifacts:
+      - index.html
