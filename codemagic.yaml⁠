@@ -4,8 +4,8 @@ workflows:
     environment:
       node: latest
     scripts:
-      - name: Build
+      - name: Build PWA
         script: |
-          echo "Building MameV2Ray PWA..."
+          echo "Building MameV2Ray..."
     artifacts:
       - index.html
